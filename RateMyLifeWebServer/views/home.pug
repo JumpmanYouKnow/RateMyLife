@@ -1,0 +1,118 @@
+extends layout
+
+block content
+  section#home.banner
+    .container
+      .row
+        .col-xs-6.wow.fadeInLeft.animated
+          h3 introducing rate my life
+          h1 LifeStyle Based Insurance
+          p
+            | We care about your health and financial life!<br>We are committed to improve the financial world of those who have a good lifestyle.<br>We provide accurate information to insurance companies for precise policy pricing and better financial services.
+          if !user
+            button(onclick="goTo('/auth/facebook')").download-btn Start Now
+          else
+            button(onclick="goTo('/dashboard')").download-btn Start Now
+  
+          button(onclick="goToAnchor('#features')").features-btn View features
+        .col-xs-6.banner-img.wow.fadeInRight.animated
+          img.img-responsive(src='img/verticle-phone.png', alt='')
+  // end of banner section
+  // feature sectiona
+  section#features.features.text-center
+    .container
+      .row
+        h4 product overview
+        h2 List of amazing features
+        img.img-responsive(src='img/daag.png', alt='')
+        .col-md-3.wow.zoomIn.animated
+          i.fa.fa-cutlery
+          h3 Food Recognition
+          p
+            | Auto detect food categories and calories based on uploaded food pictures and factor meal quality into the insurance score.
+        .col-md-3.wow.zoomIn.animated
+          i.fa.fa-cog
+          h3 Customizable
+          p
+            | Easy to customize activity types to meet personalized needs.
+        .col-md-3.wow.zoomIn.animated
+          i.fa.fa-automobile
+          h3 Driving Habit
+          p
+            | Auto detect acceleration, mileage, speed, brake and calculates an auto insurance score based on the driving habit. 
+        .col-md-3.wow.zoomIn.animated
+          i.fa.fa-money
+          h3 Insurance Quotes
+          p
+            | Able to forward insurance scores to insurance companies and get best quotes. A win-win relationship for both insurer and insured.
+  // end of features section
+  hr
+  // details section
+  section#about.details
+    .container
+      .row
+        .col-md-4.col-xs-6.col-sm-6.wow.slideInUp.animated
+          img.img-responsive.details-phone(src='img/food.png', alt='insurance')
+        .col-md-7.col-xs-6.col-sm-6.wow.slideInUp.animated
+          h44 insurance beyond insurance
+          h2 Higher Your Score, Lower Your Quote
+          img.img-responsive(src='img/daag.png', alt='')
+          p
+            | With our universally recognised scoring system, a healthier lifestyle today can bring down your insurance bill tomorrow. We have partnered with global insurance companies to provide the most accurate, individual-based quote for customers.
+          ul
+            li
+              i.fa.fa-trophy
+              | Featured Dynamic Rating System
+            li
+              i.fa.fa-mobile
+              | Compatible With All Mobile Platforms
+            li
+              i.fa.fa-bolt
+              | Get Instant Price Change In Quote
+            li
+              i.fa.fa-tachometer
+              | Join Today And Start Your Saving
+  // end of details section
+  // features details section
+  section.feature-detail
+    .container
+      .row
+        .col-xs-6.wow.fadeInLeft.animated
+          h4 stay fit, stay connected
+          h2 Keep On Track With Your Goal
+          img(src='img/daag.png', alt='')
+          p
+            |  Wonder how to boost your ratings? We will push you fun activities every day. Track your percentage, activate new goals, and stay connected with all your friends. Any time, Every time.  
+        .col-xs-5.horizontal-phone.wow.fadeInRight.animated
+          img.img-responsive(src='img/laid-phone2.png', alt='sleep')
+  // end of features-detail section
+  // contact section
+  section#contact.contact.text-center
+    .container
+      .row
+        .contact-heading
+          h4 stay in touch
+          h2 Contact us
+        .col-md-2.col-md-offset-1.col-xs-4.col-sm-4
+          i.fa.fa-phone
+          p Phone: (519) 999-9999
+          p Fax: (519) 999-9999
+        .col-md-2.col-md-offset-2.col-xs-4.col-sm-4
+          i.fa.fa-map-marker
+          p 88 Queens Quay West
+          p Suite 2900 
+          p Toronto, ON
+        .col-md-2.col-md-offset-2.col-xs-4.col-sm-4.clearfix
+          i.fa.fa-envelope-o
+          p info@gmail.com
+          p support@gmail.com
+        .col-md-8.col-md-offset-2.col-xs-12.col-sm-12
+          article.contact-form
+            form(action='contact')
+              .col-md-5.col-md-offset-1.contact-form-left
+                input.name(type='text', placeholder='NAME*')
+                input.email(type='email', placeholder='EMAIL*')
+                input.subject(type='text', placeholder='SUBJECT*')
+              .col-md-5.contact-form-right.text-right
+                textarea#message.message(name='message', cols='30', rows='10', placeholder='MESSAGE')
+                input.submit-btn(type='submit', value='send message')

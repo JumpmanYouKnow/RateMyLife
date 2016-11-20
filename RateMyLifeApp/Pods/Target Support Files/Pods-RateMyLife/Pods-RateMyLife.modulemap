@@ -1,0 +1,6 @@
+framework module Pods_RateMyLife {
+  umbrella header "Pods-RateMyLife-umbrella.h"
+
+  export *
+  module * { export * }
+}
