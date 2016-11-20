@@ -11,3 +11,7 @@ Our web server site : http://ratemylife.tk/
 
 On the customer side, they should have access to at least mobile phones in order to get full usage of our app. In order to get the most accurate, customized scores will be generated and eligible for sending to insurance companies after one week's use of info-tracking.
 On the company side, registered insurance companies will have access to our rating database, for pricing purposes only. If a greater score has appeared in our database and stayed consistent for a short period of time, we will inform the insurance companies to confirm a price drop in premium, and vice versa.
+
+##ScreenShots
+
+![alt tag](https://raw.githubusercontent.com/Mononster/RateMyLife/Life.jpeg)
