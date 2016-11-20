@@ -19,7 +19,7 @@ class ActivityViewController : SwipeViewController{
         VC1.view.backgroundColor = AppColor.dividerColor2
         VC1.title = "Life"
         
-        let VC2 = UIViewController()
+        let VC2 = CarViewController()
         VC2.view.backgroundColor = AppColor.dividerColor2
         VC2.title = "Car"
         

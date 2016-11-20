@@ -17,7 +17,7 @@ class ExcerciseView : CommonView{
     private var timer: Timer?
     private var progressValue: Float = 0
     let storage = HKHealthStore()
-    var step : Double?
+    var step : Int?
     var stepLabel : UILabel!
     var distanceLabel : UILabel!
     var distance : Double?
@@ -39,17 +39,17 @@ class ExcerciseView : CommonView{
         
         self.addSubview(logoImage)
         
-        let view = UIView(frame : CGRect(x: 5, y: 160, width: self.frame.width - 10, height: 80))
+        let view = UIView(frame : CGRect(x: 5, y: 150, width: self.frame.width - 10, height: 80))
         view.layer.borderWidth = 2
         view.layer.borderColor = AppColor.dividerColor2.cgColor
         view.layer.cornerRadius = 20
         view.backgroundColor = AppColor.lightOrange
         
-        let label = UILabel(frame: CGRect(x: 40, y: 10, width: self.frame.width / 2,height: 80))
+        let label = UILabel(frame: CGRect(x: 50, y: 10, width: self.frame.width / 2,height: 80))
         label.text = "Steps:"
         label.font = UIFont(name: "breipfont", size: 50)
         label.textColor = UIColor.white
-        stepLabel = UILabel(frame: CGRect(x: self.frame.width / 2 + 50, y: 10, width : 200, height: 80))
+        stepLabel = UILabel(frame: CGRect(x: self.frame.width / 2 + 35, y: 10, width : 200, height: 80))
         stepLabel.text = "0"
         stepLabel.font = UIFont(name: "breipfont", size: 50)
         stepLabel.textColor = UIColor.white
@@ -59,7 +59,7 @@ class ExcerciseView : CommonView{
         self.addSubview(stepDisplay)
         
         
-        let view2 = UIView(frame : CGRect(x: 5, y: 280, width: self.frame.width - 10, height: 80))
+        let view2 = UIView(frame : CGRect(x: 5, y: 270, width: self.frame.width - 10, height: 80))
         view2.layer.borderWidth = 2
         view2.layer.borderColor = AppColor.dividerColor2.cgColor
         view2.layer.cornerRadius = 20
@@ -69,7 +69,7 @@ class ExcerciseView : CommonView{
         label2.text = "Distance:"
         label2.font = UIFont(name: "breipfont", size: 50)
         label2.textColor = UIColor.white
-        distanceLabel = UILabel(frame: CGRect(x: self.frame.width / 2 + 50, y: 10, width : 200, height: 80))
+        distanceLabel = UILabel(frame: CGRect(x: self.frame.width / 2 + 40, y: 10, width : 200, height: 80))
         distanceLabel.text = "0"
         distanceLabel.font = UIFont(name: "breipfont", size: 50)
         distanceLabel.textColor = UIColor.white
@@ -100,7 +100,7 @@ class ExcerciseView : CommonView{
     func initStepView(){
         let view = UIView()
         circleSlider = CircleSlider(frame: CGRect(x: self.frame.width / 2 - 100, y: 170, width: 200, height: 200) , options: [.barColor(UIColor(red: 255/255, green: 190/255, blue: 190/255, alpha: 0.3)),
-                                                                                                                             .trackingColor(UIColor(red: 159/255, green: 0/255, blue: 0/255, alpha: 1)),
+                                                                                                                             .trackingColor(AppColor.lightOrange),
                                                                                                                              .barWidth(20),
                                                                                                                              .sliderEnabled(false)])
         
@@ -202,11 +202,11 @@ class ExcerciseView : CommonView{
                         
                         let steps = quantity.doubleValue(for: HKUnit.count())
                         
-                        self.step = steps
+                        self.step = Int(steps)
                         print("Steps = \(steps)")
                         
                         DispatchQueue.main.async {
-                            self.stepLabel.text = String(steps) // also does not work
+                            self.stepLabel.text = String(format: "%.0f", steps) // also does not work
                         }
                         
                         
