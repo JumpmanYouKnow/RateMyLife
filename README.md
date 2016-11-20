@@ -15,3 +15,7 @@ On the company side, registered insurance companies will have access to our rati
 ##ScreenShots
 
 ![alt tag](https://raw.githubusercontent.com/Mononster/RateMyLife/master/RateMyFood.jpeg)
+![alt tag](https://raw.githubusercontent.com/Mononster/RateMyLife/master/Life.jpeg)
+![alt tag](https://raw.githubusercontent.com/Mononster/RateMyLife/master/Rate.jpeg)
+![alt tag](https://raw.githubusercontent.com/Mononster/RateMyLife/master/RateMyDistance.jpeg)
+![alt tag](https://raw.githubusercontent.com/Mononster/RateMyLife/master/web.png)
